@@ -6,7 +6,8 @@ import java.util.List;
 public class Hourse {
 
 	private Board board;
-	private List<List<Cell>> failedPaths = new ArrayList<>();
+//	private List<List<Cell>> failedPaths = new ArrayList<>();
+	private PathMemory failedPaths = new PathMemory();
 	private List<Cell> path = new ArrayList<>();
 
 	public Hourse(Board board) {
@@ -78,6 +79,10 @@ public class Hourse {
 
 	public List<Cell> getPath() {
 		return path;
+	}
+
+	public PathMemory getFailedPath() {
+		return failedPaths;
 	}
 
 }

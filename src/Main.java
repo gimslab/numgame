@@ -1,10 +1,8 @@
-import java.util.List;
-
 public class Main {
 
 	public static void main(String[] args) {
 
-		Board board = BoardFactory.makeNewBoard(6, 6);
+		Board board = BoardFactory.makeNewBoard();
 		
 		System.out.println(board.toString());
 		
@@ -12,9 +10,10 @@ public class Main {
 
 		h.runFrom(board.getCellWithFirstFlag());
 		
-		List<Cell> path = h.getPath();
-		
-		System.out.println(path);
+		System.out.println("----");
+		System.out.println(h.getPath());
+		System.out.println("----");
+		System.out.println(h.getFailedPath().toString());
 	}
 
 }
