@@ -3,14 +3,13 @@ import static java.util.stream.Collectors.toList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hourse {
+public class Horse {
 
 	private Board board;
-//	private List<List<Cell>> failedPaths = new ArrayList<>();
 	private PathMemory failedPaths = new PathMemory();
 	private List<Cell> path = new ArrayList<>();
 
-	public Hourse(Board board) {
+	public Horse(Board board) {
 		this.board = board;
 	}
 
@@ -32,7 +31,6 @@ public class Hourse {
 	}
 
 	private void saveIntoFailed(List<Cell> path) {
-		System.out.println(path);
 		failedPaths.add(copyOf(path));
 	}
 
@@ -84,5 +82,4 @@ public class Hourse {
 	public PathMemory getFailedPath() {
 		return failedPaths;
 	}
-
 }

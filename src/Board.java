@@ -24,11 +24,7 @@ public class Board {
 
 	private Cell findWestFor(int addr, int xSize) {
 		int westAddr = addr - 1;
-		return westAddr >= 1 && mod(westAddr, xSize) != 0 ? cells.get(westAddr) : null;
-	}
-
-	private int mod(int a, int b) {
-		return a % b;
+		return westAddr >= 1 && westAddr % xSize != 0 ? cells.get(westAddr) : null;
 	}
 
 	private Cell findNorthFor(int addr, int xSize) {
