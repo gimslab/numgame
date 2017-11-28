@@ -14,6 +14,7 @@ public class Main {
 
 		System.out.println("*** result ***");
 		System.out.println(horse.getPath());
+		System.out.println("find success = "+horse.succeedFinding());
 
 		System.out.println("*** failed paths ***");
 		System.out.println(horse.getFailedPath().toString());

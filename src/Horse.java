@@ -20,6 +20,9 @@ public class Horse {
 		while (path.size() < board.getCellCount()) {
 			Cell next = findNextAvailableCell(cur);
 			if (next == null) {
+				if (path.size() <= 1) { // no way
+					break;
+				}
 				saveIntoFailed(path);
 				path.remove(path.size() - 1);
 				cur = path.get(path.size() - 1);
@@ -81,5 +84,9 @@ public class Horse {
 
 	public PathMemory getFailedPath() {
 		return failedPaths;
+	}
+
+	public boolean succeedFinding() {
+		return path.size() == board.getCellCount();
 	}
 }
